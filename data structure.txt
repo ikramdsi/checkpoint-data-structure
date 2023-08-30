@@ -1,0 +1,43 @@
+problematique 1 :
+
+def sum_of_distinct_elements(set1, set2):
+    distinct_elements = set()  # Using a set to store distinct elements
+    
+    for element in set1:
+        distinct_elements.add(element)
+    
+    for element in set2:
+        distinct_elements.add(element)
+    
+    return sum(distinct_elements)
+
+# Example sets
+set1 = [3, 1, 7, 9]
+set2 = [2, 4, 1, 9, 3]
+
+result = sum_of_distinct_elements(set1, set2)
+print("Sum of distinct elements from set1 and set2:", result)
+
+problematique 2 : 
+import numpy as np  # For numerical operations
+
+def dot_product(v1, v2):
+    return np.dot(v1, v2)
+
+def main():
+    n = int(input("Enter the number of vector pairs: "))
+    
+    for i in range(n):
+        v1 = np.array(list(map(float, input("Enter vector v1 (space-separated values): ").split())))
+        v2 = np.array(list(map(float, input("Enter vector v2 (space-separated values): ").split())))
+        
+        dp = dot_product(v1, v2)
+        
+        if np.isclose(dp, 0.0, rtol=1e-9):  # Check if dot product is approximately zero
+            print("Vectors are orthogonal.")
+        else:
+            print("Vectors are not orthogonal.")
+
+if __name__ == "__main__":
+    main()
+
